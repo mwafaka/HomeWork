@@ -1,12 +1,12 @@
 :root {
-  --base: "#ffff00";
+  --base: yellow;
   --spacing: 10px;
   --blur: 10px;
 }
 img {
   padding: var(--spacing);
   background: var(--base);
-  filter: var(--blur);
+  filter: blur(var(--blur));
 }
 
 body {

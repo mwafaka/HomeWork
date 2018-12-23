@@ -37,21 +37,21 @@ const people = [
 
 ///filter for those who were born in the 1500///
 const arr = inventors.filter(m => m.year >= 1500 && m.year < 1600);
-console.table(arr);
+//console.table(arr);
 
 //////////////map the full name////////
 const full = inventors.map(f => `${f.first} ${f.last}`);
-console.table(full);
+//console.table(full);
 
 /////////////sort the oldest to youngest/////////////
 const old = inventors.sort((a, b) => a.year > b.year);
-console.table(old);
+//console.table(old);
 
 ////////reduce///////////
 const totaly = inventors.reduce((a, b) => {
   return a + (b.passed - b.year);
 }, 0);
-console.log(totaly);
+//console.log(totaly);
 
 /////////////sort by  years leaved///////////////
 const oldest = inventors.sort((a, b) => {
@@ -59,9 +59,37 @@ const oldest = inventors.sort((a, b) => {
   const next = b.passed - b.year;
   return last > next ? -1 : 1;
 });
-console.table(oldest);
+//console.table(oldest);
 
-/////////////////////
-const me = document.querySelector(".mw-category");
-const a = document.querySelectorAll(".mw-category-group");
-console.log(a);
+/////////////////some//////////////////
+const isOld = inventors.some(person => {
+  const currentYear = new Date().getFullYear();
+  if (currentYear - person.year >= 500) {
+    return true;
+  }
+});
+console.log(isOld);
+
+///////////////every/////////////
+
+const allOld = inventors.every(person => {
+  const currentYear = new Date().getFullYear();
+  if (currentYear - person.year >= 500) {
+    return true;
+  }
+});
+console.log(allOld);
+
+//////////////find//////////////
+const comment = inventors.find(x => {
+  if (x.year == 1473) {
+    return true;
+  }
+});
+console.log(comment);
+
+///////////findIndex///////////////////
+const index = inventors.findIndex(m => {
+  m.first == "Albert";
+});
+console.log(index);

@@ -93,3 +93,23 @@ const index = inventors.findIndex(m => {
   m.first == "Albert";
 });
 console.log(index);
+//////////////////sum all Primes///////////////
+function sumPrimes(num) {
+  var prime = [];
+  for (var i = num; i > 0; i--) {
+    for (var j = 2; j <= i; j++) {
+      console.log(i, j);
+
+      if (i === j) {
+        prime.push(i);
+      } else if (i % j === 0) {
+        break;
+      }
+    }
+  }
+  return prime.reduce(function(a, b) {
+    return a + b;
+  }, 0);
+}
+
+sumPrimes(10);

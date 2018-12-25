@@ -113,3 +113,19 @@ function sumPrimes(num) {
 }
 
 sumPrimes(10);
+///////////////Smallest common Multiple///////////////////
+function smallestCommons(arr) {
+  arr.sort((a, b) => (a > b ? 1 : -1));
+  let [x, y] = arr;
+  while (x <= arr[1]) {
+    if (y % x === 0) {
+      x++;
+    } else {
+      y += arr[1];
+      x = arr[0];
+    }
+  }
+  return y;
+}
+
+smallestCommons([1, 5]);

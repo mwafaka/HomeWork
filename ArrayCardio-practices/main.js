@@ -201,3 +201,26 @@ function addTogether() {
 }
 
 addTogether(2, 3);
+//////////////Argument optional 2/////////////////777
+function addTogether(a, b) {
+  if (b) {
+    if (typeof b === "string") {
+      return undefined;
+    }
+    return a + b;
+  }
+  if (typeof a === "string") {
+    return undefined;
+  }
+
+  return function(b) {
+    if (typeof b !== "number") {
+      return undefined;
+    }
+    return a + b;
+  };
+}
+addTogether(2, 3);
+addTogether(2)(3);
+addTogether("http://bit.ly/IqT6zt");
+addTogether(2)([3]);

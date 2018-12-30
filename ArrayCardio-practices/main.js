@@ -224,3 +224,29 @@ addTogether(2, 3);
 addTogether(2)(3);
 addTogether("http://bit.ly/IqT6zt");
 addTogether(2)([3]);
+
+////////////////////Make a person with this key ////////////////7
+var Person = function(firstAndLast) {
+  this.getFullName = function() {
+    return firstAndLast;
+  };
+  this.getLastName = function() {
+    return firstAndLast.split(" ")[1];
+  };
+  this.getFirstName = function() {
+    return firstAndLast.split(" ")[0];
+  };
+  this.setFullName = function(name) {
+    return (firstAndLast = name);
+  };
+  this.setLastName = function(name) {
+    return (firstAndLast = firstAndLast.split(" ")[0] + " " + name);
+  };
+  this.setFirstName = function(name) {
+    return (firstAndLast = name + " " + firstAndLast.split(" ")[1]);
+  };
+  return firstAndLast;
+};
+
+var bob = new Person("Bob Ross");
+bob.getFullName();

@@ -251,7 +251,7 @@ var Person = function(firstAndLast) {
 var bob = new Person("Bob Ross");
 bob.getFullName();
 
-///////////////orbitalPperiod////////////////7
+///////////////orbitalPperiod////////////////
 function orbitalPeriod(arr) {
   var GM = 398600.4418;
   var earthRadius = 6367.4447;
@@ -266,3 +266,48 @@ function orbitalPeriod(arr) {
 }
 
 orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }]);
+
+////////////palindrome//////////////
+function palindrome(str) {
+  return (
+    str.replace(/[\W_]/g, "").toLowerCase() ===
+    str
+      .replace(/[\W_]/g, "")
+      .toLowerCase()
+      .split("")
+      .reverse()
+      .join("")
+  );
+}
+
+palindrome("eye");
+
+//////////////////////roman numeral converter////////////////
+function convertToRoman(num) {
+  var decimalValue = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  var romanNumeral = [
+    "M",
+    "CM",
+    "D",
+    "CD",
+    "C",
+    "XC",
+    "L",
+    "XL",
+    "X",
+    "IX",
+    "V",
+    "IV",
+    "I"
+  ];
+  let you = "";
+  for (let me = 0; me < decimalValue.length; me++) {
+    while (decimalValue[me] <= num) {
+      you += romanNumeral[me];
+      num -= decimalValue[me];
+    }
+  }
+  return you;
+}
+
+convertToRoman(36);

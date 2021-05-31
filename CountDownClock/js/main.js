@@ -1,12 +1,12 @@
 function countdown() {
   var now = new Date();
-  var eventDate = new Date(2018, 12, 22);
+  var eventDate = new Date(2019, 09, 10);
 
   var currentTime = now.getTime();
   var eventTime = eventDate.getTime();
 
   var remTime = eventTime - currentTime;
-  console.log(remTime);
+  console.log(eventDate);
 
   var s = Math.floor(remTime / 1000);
   var m = Math.floor(s / 60);
